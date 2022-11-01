@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;700;800&display=swap");
+
+:root {
+  --primaryOrange: hsl(35, 77%, 62%);
+  --primaryRed: hsl(5, 85%, 63%);
+  --neturalWhite: hsl(36, 100%, 99%);
+  --neturalBlue: hsl(233, 8%, 79%);
+  --neturalGrayishBlue: hsl(236, 13%, 42%);
+  --neturalDarkBlue: hsl(240, 100%, 5%);
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 30px;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+body {
+  /* min-height: 120vh; */
+  display: grid;
+  place-content: center;
+  font-size: 15px;
+  margin-top: 30px;
+  font-family: "Inter", sans-serif;
+}
+hr {
+  /* margin-top: 5px; */
+  width: 266px;
+  color: var(--neturalBlue);
+  height: 0px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+.mainSection {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  gap: 1rem;
+  grid-template-areas:
+    "main main section"
+    "name par section "
+    "footer1 footer2 footer3";
+}
+.headernavbar {
+  padding-top: 10px;
+}
+.headernavbar > * {
+  text-decoration: none;
+  font-size: 15px;
+
+  margin: 18px;
+  color: var(--neturalGrayishBlue);
+}
+.headernavbar > *:hover {
+  color: var(--primaryRed);
+}
+.mainImage {
+  grid-area: main;
+  width: 100%;
+  height: 100%;
+}
+.mainTitle {
+  grid-area: name;
+  font-size: 40px;
+  font-weight: 800;
+}
+.section {
+  grid-area: section;
+  background-color: var(--neturalDarkBlue);
+  width: 300px;
+  display: grid;
+}
+.paragraph {
+  grid-area: par;
+}
+.footer1 {
+  grid-area: footer1;
+  display: flex;
+  margin-top: 20px;
+}
+.footer2 {
+  grid-area: footer2;
+  display: flex;
+  margin-top: 20px;
+}
+.footer3 {
+  grid-area: footer3;
+  display: flex;
+  margin-top: 20px;
+}
+.sectionTitle {
+  color: var(--primaryOrange);
+  font-size: 30px;
+  font-weight: bold;
+  margin: 19px;
+}
+.section > div {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.titleWhite {
+  color: var(--neturalWhite);
+  text-decoration: none;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.titleWhite:hover {
+  color: var(--primaryOrange);
+}
+.sectionPar {
+  color: var(--neturalBlue);
+  font-size: 12px;
+}
+.readMore {
+  text-decoration: none;
+  background-color: var(--primaryRed);
+  padding: 12px 30px;
+  color: var(--neturalWhite);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+}
+.readMore:hover {
+  background-color: var(--neturalDarkBlue);
+}
+.paragraphStyle {
+  font-size: 12px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: var(--neturalGrayishBlue);
+}
+.textImage > :last-child {
+  font-size: 12px;
+  color: var(--neturalGrayishBlue);
+  line-height: 1.6;
+}
+.imageFooter {
+  width: 92px;
+  height: 111px;
+  align-self: center;
+}
+.textImage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 10px;
+  height: 120px;
+}
+.textImage > :first-child {
+  color: var(--neturalBlue);
+  font-size: 25px;
+}
+.textImage > a {
+  font-weight: 800;
+
+  text-decoration: none;
+  color: var(--neturalDarkBlue);
+}
+.textImage > a:hover {
+  color: var(--primaryRed);
+}
+.showIcon {
+  display: none;
+  position: relative;
+}
+
+#side-menu {
+  background-color: white;
+  width: 300px;
+  height: 100%;
+  position: fixed;
+  display: none;
+  right: 20px;
+  top: 0px;
+}
+#side-menu > :first-child {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+#side-menu-hide {
+  display: flex;
+  flex-direction: column;
+  height: 410px;
+  justify-content: center;
+}
+#side-menu-hide > a {
+  text-decoration: none;
+  margin: 20px;
+  color: var(--neturalDarkBlue);
+  background-color: var(--neturalWhite);
+}
+
+@media only screen and (max-width: 375px) {
+  body {
+    margin-left: 27px;
+  }
+  .mainSection {
+    display: grid;
+    grid-template-columns: 350px;
+    grid-template-areas:
+      "main "
+      "name"
+      "par"
+      "section "
+      "footer1"
+      " footer2 "
+      "footer3";
+
+    /* justify-content: start;
+    align-content: stretch; */
+    width: 375px;
+  }
+  .headernavbar {
+    display: none;
+  }
+  .showIcon {
+    display: inline;
+    margin-right: 26px;
+  }
+  .showIcon:hover #side-menu {
+    display: block;
+  }
+  .closeMenu:hover #side-menu {
+    display: none;
+  }
+}
